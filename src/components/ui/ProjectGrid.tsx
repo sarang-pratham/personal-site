@@ -20,7 +20,7 @@ const projects: Project[] = [
         tech: ["Next.js 15", "Tailwind v4", "Framer Motion", "Lucide React", "TypeScript"],
         latency: "12ms",
         status: "RUNNING",
-        link: "#"
+        link: "https://github.com/sarang-pratham/personal-site"
     }
 ];
 
@@ -54,12 +54,15 @@ function ProjectCard({ project }: { project: Project }) {
     const [isStackHovered, setIsStackHovered] = useState(false);
 
     return (
-        <motion.div
+        <motion.a 
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             whileHover={{ borderColor: "var(--color-pumpkin-500-20)" }}
-            className="group relative border border-zinc-800 bg-zinc-900/20 rounded-sm overflow-visible hover:bg-zinc-900/40 transition-colors h-64 flex flex-col"
+            className="group relative border border-zinc-800 bg-zinc-900/20 rounded-sm overflow-visible hover:bg-zinc-900/40 transition-colors h-64 flex flex-col cursor-pointer block"
         >
             {/* Scanning Effect */}
             <motion.div
@@ -83,9 +86,10 @@ function ProjectCard({ project }: { project: Project }) {
 
                 <div className="mt-auto pt-4 border-t border-zinc-800/50 flex items-center justify-between text-xs font-mono text-zinc-600 relative">
                     <div
-                        className="flex items-center gap-1 cursor-help hover:text-zinc-300 transition-colors"
+                        className="flex items-center gap-1 cursor-help hover:text-zinc-300 transition-colors relative"
                         onMouseEnter={() => setIsStackHovered(true)}
                         onMouseLeave={() => setIsStackHovered(false)}
+                        onClick={(e) => e.stopPropagation()} 
                     >
                         <Layers size={12} />
                         <span>[STACK_INFO]</span>
@@ -97,7 +101,8 @@ function ProjectCard({ project }: { project: Project }) {
                                 initial={{ opacity: 0, y: 10, scale: 0.95 }}
                                 animate={{ opacity: 1, y: 0, scale: 1 }}
                                 exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                                className="absolute left-0 bottom-full mb-2 w-48 bg-zinc-950 border border-zinc-800 rounded shadow-xl z-50 p-3"
+                                className="absolute left-0 bottom-full mb-2 w-48 bg-zinc-950 border border-zinc-800 rounded shadow-xl z-50 p-3 cursor-default"
+                                onClick={(e) => e.preventDefault()}
                             >
                                 <div className="text-[10px] text-zinc-500 mb-2 border-b border-zinc-900 pb-1">module_tree</div>
                                 <div className="flex flex-col gap-1 text-xs text-zinc-400">
@@ -119,7 +124,7 @@ function ProjectCard({ project }: { project: Project }) {
                     <span>lat: {project.latency}</span>
                 </div>
             </div>
-        </motion.div>
+        </motion.a>
     );
 }
 

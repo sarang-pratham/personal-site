@@ -12,7 +12,7 @@ interface LogEntry {
 
 const logs: LogEntry[] = [
     { id: "0xf0", timestamp: "2026.01.02 20:00:00", event: "PORTFOLIO_CORE_STABLE", status: "INFO", details: "Portfolio running live." },
-    { id: "0xf1", timestamp: "2026.01.02 19:55:00", event: "DEPLOYED_PORTFOLIO", status: "SUCCESS", details: "Site with Next.js & Tailwind sucess." },
+    { id: "0xf1", timestamp: "2026.01.02 19:55:00", event: "DEPLOYED_PORTFOLIO", status: "SUCCESS", details: "Site with Next.js & Tailwind success." },
     { id: "0xef", timestamp: "2026.01.02 19:30:00", event: "PROMPT_TO_CODE_SYNC", status: "WARNING", details: "Reviewed & synced prompt-to-code." },
     { id: "0xee", timestamp: "2026.01.02 19:15:00", event: "AGENT_ORCHESTRATOR_INIT", status: "SUCCESS" },
     { id: "0xed", timestamp: "2026.01.02 19:00:00", event: "SYSTEM_BOOTSTRAP", status: "INFO", details: "Kernel init." },
