@@ -43,3 +43,6 @@ export default function RootLayout({
     </html>
   );
 }
+
+// For cloudflare edge deployment
+export const runtime = 'edge';
