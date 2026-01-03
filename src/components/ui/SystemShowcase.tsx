@@ -24,12 +24,12 @@ const projects: Project[] = [
     }
 ];
 
-export function ProjectGrid() {
+export function SystemShowcase() {
     return (
-        <section id="projects" className="py-12 px-4 md:px-0">
+        <section id="system-showcase" className="py-12 px-4 md:px-0">
             <div className="flex items-center gap-2 mb-8 border-b border-zinc-900 pb-4">
                 <span className="text-pumpkin-500 font-mono">#</span>
-                <h2 className="text-lg font-bold tracking-tight">OPERATIONAL_HISTORY</h2>
+                <h2 className="text-lg font-bold tracking-tight">SYSTEM_SHOWCASE</h2>
                 <span className="text-zinc-600 text-xs font-mono ml-auto">Active: 1</span>
             </div>
 
