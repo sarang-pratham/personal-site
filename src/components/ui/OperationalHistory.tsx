@@ -25,7 +25,7 @@ const history: HistoryItem[] = [
         role: "Software Engineer",
         company: "Abilitystack Inc.",
         period: "2022 - 2025",
-        description: "Developed microservices, Data pipelines and AI Agents / Workflow focusing on HRTech domain.",
+        description: "Developed microservices, Data pipelines and AI Agents / Workflow focusing HRTech domain.",
         tech: ["Python", "LangGraph", "PostgreSQL", "DSPy", "Redis", "Apache Spark", "AI Integrations (OpenAI, Anthorpic, Gemini)"],
         type: "commit"
     }

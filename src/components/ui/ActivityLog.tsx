@@ -20,7 +20,7 @@ const logs: LogEntry[] = [
 
 export function ActivityLog() {
     return (
-        <section id="log" className="py-12 px-4 md:px-0 mb-20">
+        <section id="activity-log" className="py-12 px-4 md:px-0 mb-20">
             <div className="flex items-center gap-2 mb-8 border-b border-zinc-900 pb-4">
                 <span className="text-zinc-600 font-mono">::</span>
                 <h2 className="text-lg font-bold tracking-tight">SYSTEM_LOG</h2>

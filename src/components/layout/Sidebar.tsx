@@ -18,7 +18,10 @@ export function Sidebar() {
           }
         });
       },
-      { threshold: 0.5 }
+      { 
+        rootMargin: "-40% 0px -45% 0px", // Detect when element is in the middle 15% of screen
+        threshold: 0
+      }
     );
 
     const sections = document.querySelectorAll("section[id]");
