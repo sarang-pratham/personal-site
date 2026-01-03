@@ -27,7 +27,7 @@ export function TerminalHero() {
     }, []);
 
     return (
-        <section className="min-h-[50vh] flex flex-col justify-center pt-20 px-4 md:px-0">
+        <section id="hero" className="min-h-[50vh] flex flex-col justify-center pt-20 px-4 md:px-0">
             <div className="w-full max-w-3xl border border-zinc-800 bg-black/50 rounded-lg overflow-hidden backdrop-blur-sm shadow-2xl">
                 {/* Terminal Header */}
                 <div className="h-8 bg-zinc-900 border-b border-zinc-800 flex items-center px-4 gap-2">
@@ -44,7 +44,7 @@ export function TerminalHero() {
                         <motion.span
                             animate={{ opacity: [0, 1, 0] }}
                             transition={{ repeat: Infinity, duration: 0.8 }}
-                            className="inline-block w-2.5 h-5 bg-pumpkin-500 ml-1 translate-y-1 align-middle"
+                            className="inline-block w-2.5 h-5 bg-pumpkin-500 ml-1 translate-y-[2px] align-middle"
                         />
                     </div>
                 </div>
