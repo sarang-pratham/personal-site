@@ -3,17 +3,18 @@
 import { Terminal, FileCode, FileJson, Clock, Layers } from "lucide-react";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export function Sidebar() {
   const pathname = usePathname();
   const [activeSection, setActiveSection] = useState("");
+  const isScrolling = useRef(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && !isScrolling.current) {
             setActiveSection(entry.target.id);
           }
         });
@@ -34,9 +35,19 @@ export function Sidebar() {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      isScrolling.current = true;
       setActiveSection(id);
+      element.scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => { isScrolling.current = false; }, 1000);
     }
+  };
+
+  const scrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    isScrolling.current = true;
+    setActiveSection("hero"); // Assuming "hero" matches the home section logic or empty string
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(() => { isScrolling.current = false; }, 1000);
   };
 
   return (
@@ -52,7 +63,7 @@ export function Sidebar() {
             icon={Terminal} 
             label="home.py" 
             active={activeSection === "" || activeSection === "hero"} 
-            onClick={(e) => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            onClick={scrollToTop}
           />
           <NavItem 
             href="#operational-history" 

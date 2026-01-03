@@ -26,10 +26,11 @@ export function SystemFooter() {
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                     </div>
-                    <span className="text-zinc-500 tracking-wider">SYSTEM_LINKS_ACTIVE</span>
+                    <span className="text-zinc-500 tracking-wider hidden md:inline">SYSTEM_LINKS_ACTIVE</span>
+                    <span className="text-zinc-500 tracking-wider md:hidden">SYS_ACTIVE</span>
                 </div>
 
-                <div className="flex gap-8">
+                <div className="flex gap-4 md:gap-8">
                     <AnimatePresence>
                         {connections.map((conn) => (
                             <ConnectionLink key={conn.label} conn={conn} />

@@ -44,7 +44,7 @@ export function TerminalHero() {
                         <motion.span
                             animate={{ opacity: [0, 1, 0] }}
                             transition={{ repeat: Infinity, duration: 0.8 }}
-                            className="inline-block w-2.5 h-5 bg-pumpkin-500 ml-1 translate-y-[2px] align-middle"
+                            className="inline-block w-2.5 h-5 bg-pumpkin-500 ml-1 translate-y-[-1px] align-middle"
                         />
                     </div>
                 </div>
